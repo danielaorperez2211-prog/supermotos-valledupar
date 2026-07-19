@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export function SuzukiSMark({ className }: { className?: string }) {
@@ -18,7 +19,7 @@ export function SuzukiSMark({ className }: { className?: string }) {
 
 export function SuzukiLogo({ className }: { className?: string }) {
   return (
-    <a
+    <Link
       href="/"
       className={cn("flex items-center gap-3 text-suzuki-red", className)}
       aria-label="Supermotos Valledupar"
@@ -34,6 +35,6 @@ export function SuzukiLogo({ className }: { className?: string }) {
           VALLEDUPAR
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
