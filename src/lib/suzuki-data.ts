@@ -162,22 +162,22 @@ export const secondaryNav: NavItem[] = [
 ];
 
 export const socials = [
-  { label: "Facebook", href: "https://www.facebook.com/SuzukiColombia" },
-  { label: "X", href: "https://twitter.com/suzuki_colombia" },
-  { label: "WhatsApp", href: "https://wa.me/573024937142" },
-  { label: "Instagram", href: "https://www.instagram.com/suzuki_colombia" },
-  { label: "YouTube", href: "https://www.youtube.com/user/SuzukiCol1" },
-  { label: "TikTok", href: "https://www.tiktok.com/@suzukicolombia" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/suzuki-motor-de-colombia-s-a" },
+  { label: "Facebook", href: "#" },
+  { label: "X", href: "#" },
+  { label: "WhatsApp", href: "#" },
+  { label: "Instagram", href: "#" },
+  { label: "YouTube", href: "#" },
+  { label: "TikTok", href: "#" },
+  { label: "LinkedIn", href: "#" },
 ];
 
 export const footerColumns = {
   ayuda: {
     title: "AYUDA",
-    phones: ["+57 302 493 7142"],
+    phones: ["+57 301 985 2150"],
     emails: [
-      { label: "PQRS: servicioalcliente@suzuki.com.co", href: "mailto:servicioalcliente@suzuki.com.co" },
-      { label: "Notificaciones judiciales: notificacionjudicial@suzuki.com.co", href: "mailto:notificacionjudicial@suzuki.com.co" },
+      { label: "PQRS: motocentersantarosa@gmail.com.com", href: "mailto:motocentersantarosa@gmail.com" },
+      { label: "Notificaciones judiciales: motocentersantarosa@gmail.com", href: "mailto:motocentersantarosa@gmail.com" },
     ],
   },
   politicas: {

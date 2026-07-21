@@ -26,15 +26,14 @@ export function SuzukiLogo({ className }: { className?: string }) {
     >
       <SuzukiSMark className="h-7 sm:h-8" />
 
-      <div className="flex flex-col leading-none">
-        <span className="font-display text-[22px] font-extrabold tracking-[0.08em] text-suzuki-red sm:text-[27px]">
-          SUPERMOTOS
-        </span>
-
-        <span className="font-display text-[15px] font-bold tracking-[0.22em] text-black sm:text-[18px]">
-          VALLEDUPAR
-        </span>
-      </div>
+<div className="flex flex-col leading-none">
+  <span className="text-xl font-bold tracking-wide">
+    MOTOCENTER
+  </span>
+  <span className="text-sm tracking-[0.3em]">
+    SANTA ROSA
+  </span>
+</div>
     </Link>
   );
 }

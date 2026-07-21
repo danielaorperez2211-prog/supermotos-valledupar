@@ -89,7 +89,7 @@ export function CookieBanner() {
 export function WhatsAppFab() {
   return (
     <a
-      href="https://wa.me/573024937142"
+      href="https://wa.me/573019852150"
       target="_blank"
       rel="noreferrer"
       aria-label="WhatsApp Suzuki"
