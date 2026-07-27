@@ -23,9 +23,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Motocicletas | Suzuki Motor de Colombia SA",
+  title: "Motocenter Santa Rosa | Motocicletas y Servicio Técnico",
   description:
-    "Suzuki Colombia, Motos, nuevas motos, precio de motos, motocicletas, motores fuera de borda, repuestos de motos, Suzuki Hayate",
+    "Motocenter Santa Rosa. Venta de motocicletas, repuestos originales y servicio técnico especializado.",
 };
 
 export default function RootLayout({
