@@ -15,9 +15,11 @@ export function Footer() {
             <h4 className="mb-5 font-display text-sm font-semibold tracking-suzuki text-white">
               {ayuda.title}
             </h4>
+
             <p className="mb-3 text-xs font-semibold tracking-suzuki text-neutral-400">
               LÍNEA DE ATENCIÓN
             </p>
+
             <ul className="space-y-2">
               {ayuda.phones.map((p) => (
                 <li key={p} className="flex items-center gap-2 text-[13px]">
@@ -26,6 +28,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
             <ul className="mt-4 space-y-3">
               {ayuda.emails.map((e) => (
                 <li key={e.href} className="flex items-start gap-2 text-[13px]">
@@ -35,14 +38,6 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li className="text-[13px]">
-                <a
-                  href="https://sedeelectronica.sic.gov.co"
-                  className="hover:text-white"
-                >
-                  SIC
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -51,6 +46,7 @@ export function Footer() {
             <h4 className="mb-5 font-display text-sm font-semibold tracking-suzuki text-white">
               {politicas.title}
             </h4>
+
             <ul className="space-y-3">
               {politicas.links.map((l) => (
                 <li key={l.label}>
@@ -70,6 +66,7 @@ export function Footer() {
             <h4 className="mb-5 font-display text-sm font-semibold tracking-suzuki text-white">
               {empresa.title}
             </h4>
+
             <ul className="space-y-3">
               {empresa.links.map((l) => (
                 <li key={l.label}>
@@ -89,9 +86,12 @@ export function Footer() {
             <h4 className="mb-5 font-display text-sm font-semibold tracking-suzuki text-white">
               SÍGUENOS
             </h4>
+
             <div className="flex flex-wrap gap-3">
               {socials.map((s) => {
-                const Icon = socialIconMap[s.label as keyof typeof socialIconMap];
+                const Icon =
+                  socialIconMap[s.label as keyof typeof socialIconMap];
+
                 return (
                   <a
                     key={s.label}
@@ -110,19 +110,26 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Legal bar */}
+      {/* Barra inferior personalizada */}
       <div className="border-t border-neutral-800">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-3 px-4 py-6 text-center sm:flex-row sm:justify-between sm:text-left xl:px-0">
           <div className="flex items-center gap-3">
             <SuzukiSMark className="h-6 text-suzuki-red" />
+
             <p className="text-[11px] leading-4 text-neutral-400">
-              SUZUKI MOTOR DE COLOMBIA S.A Nit. 891.410.137-2.
+              <span className="font-semibold text-white">
+                MOTOCENTER SANTA ROSA
+              </span>
               <br />
-              Valledupar Calle 17 No. 11-138 centro 
+              Venta de motocicletas, repuestos y accesorios.
+              <br />
+              Contáctanos por WhatsApp o correo electrónico para recibir toda la
+              información.
             </p>
           </div>
+
           <p className="text-[11px] text-neutral-500">
-            Todos los derechos reservados
+            © 2026 Motocenter Santa Rosa. Todos los derechos reservados.
           </p>
         </div>
       </div>
