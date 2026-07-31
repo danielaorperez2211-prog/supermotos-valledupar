@@ -3,6 +3,7 @@ import { Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { Header } from "@/components/suzuki/Header";
 import { Footer } from "@/components/suzuki/Footer";
@@ -60,6 +61,8 @@ export default function RootLayout({
           <WhatsAppFab />
         </ClientBody>
       </body>
+
+      <GoogleAnalytics gaId="G-V6F79ZNYXN" />
     </html>
   );
 }
