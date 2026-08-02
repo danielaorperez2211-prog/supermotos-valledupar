@@ -24,9 +24,64 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Motocenter Santa Rosa | Motocicletas y Servicio Técnico",
+  metadataBase: new URL("https://motosantarosa.com"),
+
+  title: {
+    default: "Motocenter Santa Rosa | Venta de Motocicletas Suzuki",
+    template: "%s | Motocenter Santa Rosa",
+  },
+
   description:
-    "Motocenter Santa Rosa. Venta de motocicletas, repuestos originales y servicio técnico especializado.",
+    "Motocenter Santa Rosa, en Santa Rosa del Sur, Bolívar. Venta de motocicletas Suzuki, repuestos originales y servicio técnico especializado.",
+
+  keywords: [
+    "Suzuki Santa Rosa del Sur",
+    "Motocenter Santa Rosa",
+    "Motos Suzuki Bolívar",
+    "Venta de motos Suzuki",
+    "Motocicletas Suzuki Colombia",
+    "Repuestos Suzuki",
+    "Servicio técnico Suzuki",
+  ],
+
+  authors: [{ name: "Motocenter Santa Rosa" }],
+  creator: "Motocenter Santa Rosa",
+  publisher: "Motocenter Santa Rosa",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "es_CO",
+    url: "https://motosantarosa.com",
+    siteName: "Motocenter Santa Rosa",
+    title: "Motocenter Santa Rosa | Venta de Motocicletas Suzuki",
+    description:
+      "Venta de motocicletas Suzuki, repuestos originales y servicio técnico especializado en Santa Rosa del Sur, Bolívar.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Motocenter Santa Rosa",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Motocenter Santa Rosa | Venta de Motocicletas Suzuki",
+    description:
+      "Venta de motocicletas Suzuki en Santa Rosa del Sur, Bolívar.",
+    images: ["/og-image.jpg"],
+  },
+
+  alternates: {
+    canonical: "https://motosantarosa.com",
+  },
 };
 
 export default function RootLayout({
