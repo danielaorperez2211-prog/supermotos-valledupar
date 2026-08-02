@@ -1,28 +1,3 @@
-import type { Metadata } from "next";
-import { Oswald, Roboto } from "next/font/google";
-import "./globals.css";
-import ClientBody from "./ClientBody";
-import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
-import { Header } from "@/components/suzuki/Header";
-import { Footer } from "@/components/suzuki/Footer";
-import { WhatsAppFab } from "@/components/suzuki/CookieBanner";
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://motosantarosa.com"),
 
@@ -32,38 +7,55 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Motocenter Santa Rosa, en Santa Rosa del Sur, Bolívar. Venta de motocicletas Suzuki, repuestos originales y servicio técnico especializado.",
+    "Motocenter Santa Rosa. Venta de motocicletas Suzuki nuevas, asesoría personalizada y servicio para clientes en Santa Rosa del Sur, Bolívar y todo Colombia.",
 
   keywords: [
-    "Suzuki Santa Rosa del Sur",
+    "Suzuki Colombia",
     "Motocenter Santa Rosa",
-    "Motos Suzuki Bolívar",
+    "Motocicletas Suzuki",
     "Venta de motos Suzuki",
-    "Motocicletas Suzuki Colombia",
-    "Repuestos Suzuki",
-    "Servicio técnico Suzuki",
+    "Motos Santa Rosa del Sur",
+    "Suzuki Bolívar",
+    "V-Strom",
+    "Gixxer",
+    "GN125",
+    "DR150",
+    "Motos Colombia",
   ],
 
   authors: [{ name: "Motocenter Santa Rosa" }],
+
   creator: "Motocenter Santa Rosa",
+
   publisher: "Motocenter Santa Rosa",
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://motosantarosa.com",
   },
 
   openGraph: {
     type: "website",
     locale: "es_CO",
     url: "https://motosantarosa.com",
-    siteName: "Motocenter Santa Rosa",
     title: "Motocenter Santa Rosa | Venta de Motocicletas Suzuki",
     description:
-      "Venta de motocicletas Suzuki, repuestos originales y servicio técnico especializado en Santa Rosa del Sur, Bolívar.",
+      "Venta de motocicletas Suzuki nuevas. Atención personalizada para clientes en Santa Rosa del Sur y toda Colombia.",
+    siteName: "Motocenter Santa Rosa",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Motocenter Santa Rosa",
@@ -73,51 +65,15 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Motocenter Santa Rosa | Venta de Motocicletas Suzuki",
+    title: "Motocenter Santa Rosa",
     description:
-      "Venta de motocicletas Suzuki en Santa Rosa del Sur, Bolívar.",
-    images: ["/og-image.jpg"],
+      "Venta de motocicletas Suzuki nuevas en Colombia.",
+    images: ["/logo.png"],
   },
 
-  alternates: {
-    canonical: "https://motosantarosa.com",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="es"
-      className={`${oswald.variable} ${roboto.variable}`}
-    >
-      <head>
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-grab/dist/index.global.js"
-        />
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/same-runtime/dist/index.global.js"
-        />
-      </head>
-
-      <body suppressHydrationWarning className="antialiased">
-        <ClientBody>
-          <Header />
-
-          {children}
-
-          <Footer />
-
-          <WhatsAppFab />
-        </ClientBody>
-      </body>
-
-      <GoogleAnalytics gaId="G-V6F79ZNYXN" />
-    </html>
-  );
-}
