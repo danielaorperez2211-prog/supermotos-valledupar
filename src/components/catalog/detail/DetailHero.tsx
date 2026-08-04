@@ -3,7 +3,24 @@ import type { Motorcycle } from "@/data/motorcycles";
 import { contactLinks } from "@/data/motorcycles";
 import { ChevronRight, Send, WhatsApp } from "../icons";
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export function DetailHero({ motorcycle }: { motorcycle: Motorcycle }) {
+  const registrarConversion = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18367924465/4DdbCLTy7NocEPGRwbZE",
+        value: 1.0,
+        currency: "COP",
+        transaction_id: "",
+      });
+    }
+  };
+
   return (
     <section className="relative overflow-hidden bg-[#04142b]">
       {/* Fondo principal */}
@@ -65,10 +82,12 @@ export function DetailHero({ motorcycle }: { motorcycle: Motorcycle }) {
             </div>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+
               <a
                 href={contactLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={registrarConversion}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-bold text-white shadow-xl transition hover:scale-105"
               >
                 <WhatsApp className="h-5 w-5" />
@@ -82,6 +101,7 @@ export function DetailHero({ motorcycle }: { motorcycle: Motorcycle }) {
                 <Send className="h-5 w-5" />
                 FORMULARIO
               </a>
+
             </div>
           </div>
 
