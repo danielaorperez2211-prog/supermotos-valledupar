@@ -1,5 +1,6 @@
 import { contactLinks } from "@/data/motorcycles";
 import { Phone, WhatsApp } from "./icons";
+import GoogleAdsButton from "@/components/GoogleAdsButton";
 
 export function QuoteBanner({
   title = "COTIZA TU SUZUKI HOY",
@@ -16,43 +17,23 @@ export function QuoteBanner({
         </h2>
 
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a
+          <GoogleAdsButton
             href={contactLinks.phone}
-            onClick={() => {
-              if (typeof window !== "undefined") {
-                window.gtag?.("event", "conversion", {
-                  send_to: "AW-18367924465/4DdbCLTy7NocEPGRwbZE",
-                  value: 1,
-                  currency: "COP",
-                  transaction_id: "",
-                });
-              }
-            }}
             className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-suzuki-navy shadow-lg transition-transform duration-200 hover:scale-[1.03] active:scale-95"
           >
             <Phone className="h-5 w-5" />
             Llámenos
-          </a>
+          </GoogleAdsButton>
 
-          <a
+          <GoogleAdsButton
             href={contactLinks.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => {
-              if (typeof window !== "undefined") {
-                window.gtag?.("event", "conversion", {
-                  send_to: "AW-18367924465/4DdbCLTy7NocEPGRwbZE",
-                  value: 1,
-                  currency: "COP",
-                  transaction_id: "",
-                });
-              }
-            }}
             className="inline-flex items-center justify-center gap-2.5 rounded-full bg-suzuki-whatsapp px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-transform duration-200 hover:scale-[1.03] active:scale-95"
           >
             <WhatsApp className="h-5 w-5" />
             WhatsApp
-          </a>
+          </GoogleAdsButton>
         </div>
       </div>
     </section>
