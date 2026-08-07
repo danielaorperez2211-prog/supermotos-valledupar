@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Search } from "lucide-react";
-import { assets } from "@/lib/suzuki-data";
+import { getMotorcycleBySlug } from "@/data/motorcycles";
 
 const features = [
-  "SISTEMA ANTIBLOQUEO DE FRENOS",
-  "SISTEMA DE ENCENDIDO AUTOMÁTICO DE LUCES",
-  "SISTEMA DE LUCES DE CIRCULACIÓN DIURNA",
+  "MOTOR MONOCILÍNDRICO",
+  "DISEÑO CLÁSICO Y RESISTENTE",
+  "BAJO COSTO DE OPERACIÓN",
 ];
 
 export function Disclaimer() {
@@ -28,21 +28,34 @@ export function Disclaimer() {
 }
 
 export function FeaturedModel() {
+  const motorcycle = getMotorcycleBySlug("gn125h");
+
+  if (!motorcycle) {
+    return null;
+  }
+
+  const mainImage = motorcycle.images?.[0];
+
   return (
     <section className="bg-white pb-16">
       <div className="mx-auto max-w-[1200px] px-4 xl:px-0">
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_1fr]">
-          {/* Bike */}
+
+          {/* Moto */}
           <div className="order-2 lg:order-1">
-            <img
-              src={assets.drz4s}
-              alt="Suzuki DR-Z4S"
-              className="mx-auto w-full max-w-[560px] drop-shadow-[0_25px_25px_rgba(0,0,0,0.12)]"
-            />
+            {mainImage && (
+              <img
+                src={mainImage}
+                alt={motorcycle.name}
+                className="mx-auto w-full max-w-[560px] object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.12)]"
+              />
+            )}
           </div>
 
-          {/* Content */}
+          {/* Contenido */}
           <div className="order-1 lg:order-2">
+
+            {/* Buscar modelo */}
             <div className="mb-8 flex items-center justify-end gap-4">
               <span className="font-display text-sm font-medium tracking-suzuki text-neutral-700">
                 BUSCAR MODELO
@@ -59,41 +72,48 @@ export function FeaturedModel() {
               </div>
             </div>
 
+            {/* Nombre */}
             <h2 className="font-display text-4xl font-bold tracking-tight text-suzuki-ink sm:text-5xl">
-              DR-Z4S
+              {motorcycle.name}
             </h2>
 
-            <p className="mt-4 text-[15px] leading-7 text-neutral-600">
-              La aventura está en tu ADN. La Suzuki DR-Z4S honra el legado de la
-              legendaria familia DR-Z, reconocida por su resistencia y espíritu
-              indomable. Con un diseño robusto y prestaciones confiables, está
-              lista para conquistar tanto la ciudad como los terrenos más
-              desafiantes. Su herencia off-road y su carácter versátil te
-              garantizan potencia, control y seguridad en cada ruta.
+            {/* Subtítulo */}
+            <p className="mt-4 text-[18px] font-semibold italic text-neutral-600">
+              {motorcycle.tagline}
             </p>
 
-            {/* Feature icons */}
+            {/* Descripción */}
+            <p className="mt-4 text-[15px] leading-7 text-neutral-600">
+              La {motorcycle.name} es una motocicleta clásica, confiable y
+              económica, reconocida por su resistencia y bajo costo de
+              operación. Su diseño atemporal y su mecánica sencilla la
+              convierten en una excelente opción tanto para el trabajo como
+              para el uso diario.
+            </p>
+
+            {/* Características */}
             <div className="mt-8 grid grid-cols-3 gap-3">
-              {assets.featureIcons.map((icon, i) => (
+              {features.map((feature) => (
                 <div
-                  key={icon}
+                  key={feature}
                   className="flex flex-col items-center text-center"
                 >
-                  <img
-                    src={icon}
-                    alt=""
-                    className="h-16 w-16 object-contain"
-                  />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-suzuki-ink px-2">
+                    <span className="text-center text-[9px] font-bold leading-tight text-white">
+                      SUZUKI
+                    </span>
+                  </div>
 
                   <span className="mt-2 text-[9px] font-semibold leading-tight tracking-wide text-neutral-500">
-                    {features[i]}
+                    {feature}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* CTAs */}
+            {/* Botones */}
             <div className="mt-8 flex flex-wrap gap-4">
+
               <a
                 href="#"
                 className="bg-suzuki-ink px-10 py-3 font-display text-sm font-semibold tracking-suzuki text-white transition-colors hover:bg-suzuki-red"
@@ -102,11 +122,12 @@ export function FeaturedModel() {
               </a>
 
               <Link
-                href="/motocicletas/enduro/dr-z4s"
+                href="/catalogo/catalogo/gn125h"
                 className="bg-suzuki-ink px-10 py-3 font-display text-sm font-semibold tracking-suzuki text-white transition-colors hover:bg-suzuki-red"
               >
                 MÁS INFORMACIÓN
               </Link>
+
             </div>
           </div>
         </div>
