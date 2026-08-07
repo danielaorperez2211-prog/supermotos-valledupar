@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { assets } from "@/lib/suzuki-data";
 
@@ -46,12 +47,14 @@ export function FeaturedModel() {
               <span className="font-display text-sm font-medium tracking-suzuki text-neutral-700">
                 BUSCAR MODELO
               </span>
+
               <div className="flex flex-1 items-center gap-2 border-b border-neutral-400 pb-1 sm:max-w-[240px]">
                 <input
                   type="text"
                   className="w-full bg-transparent text-sm outline-none placeholder:text-neutral-400"
                   placeholder=""
                 />
+
                 <Search className="h-4 w-4 text-neutral-500" />
               </div>
             </div>
@@ -72,8 +75,16 @@ export function FeaturedModel() {
             {/* Feature icons */}
             <div className="mt-8 grid grid-cols-3 gap-3">
               {assets.featureIcons.map((icon, i) => (
-                <div key={icon} className="flex flex-col items-center text-center">
-                  <img src={icon} alt="" className="h-16 w-16 object-contain" />
+                <div
+                  key={icon}
+                  className="flex flex-col items-center text-center"
+                >
+                  <img
+                    src={icon}
+                    alt=""
+                    className="h-16 w-16 object-contain"
+                  />
+
                   <span className="mt-2 text-[9px] font-semibold leading-tight tracking-wide text-neutral-500">
                     {features[i]}
                   </span>
@@ -89,12 +100,13 @@ export function FeaturedModel() {
               >
                 COTIZAR
               </a>
-              <a
+
+              <Link
                 href="/motocicletas/enduro/dr-z4s"
                 className="bg-suzuki-ink px-10 py-3 font-display text-sm font-semibold tracking-suzuki text-white transition-colors hover:bg-suzuki-red"
               >
                 MÁS INFORMACIÓN
-              </a>
+              </Link>
             </div>
           </div>
         </div>
