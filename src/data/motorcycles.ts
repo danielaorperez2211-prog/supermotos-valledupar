@@ -1445,6 +1445,6 @@ export function getRelatedMotorcycles(slug: string, limit = 3): Motorcycle[] {
 
 /** Central contact links — edit these to match your dealership. */
 export const contactLinks = {
-  whatsapp: "https://wa.me/573019852150",
-  phone: "tel:+573019852150",
+  whatsapp: "https://wa.me/573107476989",
+  phone: "tel:+573107476989",
 }; 
